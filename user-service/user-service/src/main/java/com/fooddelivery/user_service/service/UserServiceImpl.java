@@ -1,5 +1,6 @@
 package com.fooddelivery.user_service.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -34,5 +35,10 @@ public class UserServiceImpl implements UserService{
 		
 		throw new RuntimeException("Invalid credentials");
 		
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		return userRepository.findAll();
 	}
 }

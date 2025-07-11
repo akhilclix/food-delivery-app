@@ -1,4 +1,6 @@
 package com.fooddelivery.user_service.controller;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,5 +17,10 @@ public class UserController {
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
         return userService.register(user);
+    }
+    
+    @GetMapping
+    public List<User> getAllUsers(){
+    	return userService.getAllUsers();
     }
 }
