@@ -8,6 +8,7 @@ import com.fooddelivery.user_service.model.LoginRequest;
 import com.fooddelivery.user_service.model.User;
 import com.fooddelivery.user_service.service.UserService;
 
+@CrossOrigin(origins = "http://localhost:3000") // allow requests from React
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
