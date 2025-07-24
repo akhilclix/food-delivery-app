@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  user-service:
+    build: ./user-service/user-service
+    container_name: user-service
+    ports:
+      - "8081:8081"
+    restart: always
+
+  restaurant-service:
+    build: ./restaurant-service/restaurant-service
+    container_name: restaurant-service
+    ports:
+      - "8082:8080"   # Expose container's port 8080 on host's 8082
+    restart: always
+    depends_on:
+      - user-service
